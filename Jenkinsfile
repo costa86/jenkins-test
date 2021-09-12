@@ -19,7 +19,6 @@ pipeline {
                 }
             }
         }
-
         stage('build') {
             steps {
                 echo 'building ola'
