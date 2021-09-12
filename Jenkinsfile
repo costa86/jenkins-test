@@ -18,9 +18,9 @@ pipeline {
                 expression {
                     params.runTests
                 }
-                steps {
-                    echo 'running tests'
-                }
+            }
+            steps {
+                echo 'running tests'
             }
         }
     }
