@@ -9,8 +9,7 @@ pipeline {
             steps {
                 echo 'building'
                 echo "building ${NEW_VERSION}"
-                sh pwd
-                sh ls
+                sh whoami
 
             }
         }
