@@ -2,6 +2,10 @@ def gv
 
 pipeline {
     agent any
+    environment {
+        SSH = credentials("ssh")
+    }
+
     parameters {
         choice(name:'MODE', choices:['dev', 'prod'], description:'environment')
         booleanParam(name:'runTests', defaultValue:true, description:'Run tests?')
@@ -21,6 +25,7 @@ pipeline {
                 echo "Running on ${params.MODE}"
                 sh "whoami"
                 sh "ls"
+                sh "scp -i ${SSH} app.py costa@64.90.185.208:"
             }
         }
         stage('test') {
