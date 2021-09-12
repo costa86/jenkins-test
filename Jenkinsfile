@@ -25,6 +25,7 @@ pipeline {
                 echo "Running on ${params.MODE}"
                 sh 'whoami'
                 sh 'ls'
+                sh('ssh -o StrictHostKeyChecking=no -i ${SSH} costa@64.90.185.208 echo ola')
             }
         }
         stage('test') {
