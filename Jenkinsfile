@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 echo "testing on ${BRANCH_NAME}"
-                sh "python3 test_app.py"
+                echo $USER
             }
         }
     }
