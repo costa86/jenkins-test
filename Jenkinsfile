@@ -25,9 +25,7 @@ pipeline {
                 echo "Running on ${params.MODE}"
                 sh 'whoami'
                 sh 'ls'
-                withCredentials(bindings: [sshUserPrivateKey(keyFileVariable: '$SSH')]) {
-                    sh('scp -o StrictHostKeyChecking=no -i $SSH app.py costa@64.90.185.208:')
-                }
+                sh('scp -o StrictHostKeyChecking=no -i $SSH app.py costa@64.90.185.208:')
             }
         }
         stage('test') {
