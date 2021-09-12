@@ -1,3 +1,4 @@
+def gv
 
 pipeline {
     agent any
@@ -7,6 +8,11 @@ pipeline {
     }
 
     stages {
+        stage('init') {
+            script {
+                gv = load 'script.groovy'
+            }
+        }
         stage('build') {
             steps {
                 echo 'building ola'
@@ -20,7 +26,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'running tests'
+                gv.testApp()
             }
         }
     }
