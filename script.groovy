@@ -4,7 +4,7 @@ def buildApp() {
 
 def testApp() {
     echo 'Testing from script'
-    sh "which python3"
+    sh "which python"
 }
 return this
 
