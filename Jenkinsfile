@@ -19,6 +19,7 @@ pipeline {
             steps {
                 echo 'building ola'
                 echo "Running on ${params.MODE}"
+                sh "whoami"
             }
         }
         stage('test') {
