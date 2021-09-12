@@ -8,15 +8,5 @@ pipeline {
         }
 
     }
-    post {
-        always {
-        //ded
-        }
-        sucess {
-        //ce
-        }
-        failure {
-        //efe
-        }
-    }
+
 }
