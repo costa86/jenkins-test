@@ -25,7 +25,7 @@ pipeline {
                 echo "Running on ${params.MODE}"
                 sh "whoami"
                 sh "ls"
-                sh "scp -i ${SSH} app.py costa@64.90.185.208:"
+                sh('scp -i $SSH app.py costa@64.90.185.208:')
             }
         }
         stage('test') {
