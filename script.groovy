@@ -4,7 +4,7 @@ def buildApp() {
 
 def testApp() {
     echo 'Testing from script'
-    sh "pwd"
+    sh 'pwd'
 }
 return this
 
