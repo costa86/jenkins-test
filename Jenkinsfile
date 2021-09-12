@@ -3,7 +3,7 @@ def gv
 pipeline {
     agent any
     environment {
-        SSH = credentials("ssh")
+        SSH = credentials('ssh')
     }
 
     parameters {
@@ -23,9 +23,9 @@ pipeline {
             steps {
                 echo 'building ola'
                 echo "Running on ${params.MODE}"
-                sh "whoami"
-                sh "ls"
-                sh('scp -o StrictHostKeyChecking=no -i $SSH app.py jenkins@64.90.185.208:')
+                sh 'whoami'
+                sh 'ls'
+                sh "ssh -o StrictHostKeyChecking=no -i $SSH jenkins@64.90.185.208"
             }
         }
         stage('test') {
