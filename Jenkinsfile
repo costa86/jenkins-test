@@ -9,8 +9,6 @@ pipeline {
             steps {
                 echo 'building'
                 echo "building ${NEW_VERSION}"
-                sh whoami
-
             }
         }
         stage('test') {
