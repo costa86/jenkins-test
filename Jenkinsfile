@@ -6,13 +6,7 @@ pipeline {
                 echo 'building'
             }
         }
-        stage('test') {
-            steps {
-                echo 'testing'
-                pwd
-                ls
-            }
-        }
+
     }
     post {
         always {
