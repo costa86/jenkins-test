@@ -9,7 +9,8 @@ pipeline {
             steps {
                 echo 'building'
                 echo "building ${NEW_VERSION}"
-                echo "user ${SERVER_CREDENTIALS}"
+                pwd
+                ls
 
             }
         }
