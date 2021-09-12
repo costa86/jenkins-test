@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
     agent any
     parameters {
@@ -8,10 +10,19 @@ pipeline {
         SERVER_CREDENTIALS = credentials('mock-user')
     }
     stages {
+        stage("init"){
+            steps{
+                script {
+                    gv = load "script.groovy"
+                }
+            }
+        }
         stage('build') {
             steps {
-                echo 'building'
                 echo "building ${NEW_VERSION}"
+                script {
+                    gv.buildApp()
+                }
             }
         }
         stage('test') {
