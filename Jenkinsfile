@@ -17,8 +17,7 @@ pipeline {
         stage('test') {
             when {
                 expression {
-                    BRANCH_NAME == 'master'
-                    parameters.MODE == "dev"
+                    BRANCH_NAME == 'master' && params.MODE == 'dev'
                 }
             }
             steps {
