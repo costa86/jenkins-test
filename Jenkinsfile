@@ -6,7 +6,10 @@ pipeline {
                 echo 'building'
             }
         }
-
+        stage('test') {
+            steps {
+                echo BRANCH_NAME
+            }
+        }
     }
-
 }
