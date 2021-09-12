@@ -3,7 +3,7 @@ def gv
 pipeline {
     agent any
     environment {
-        SSH = credentials('SSH')
+        SSH = credentials('ssh')
     }
 
     parameters {
