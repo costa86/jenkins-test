@@ -28,7 +28,9 @@ pipeline {
                 }
             }
             steps {
-                gv.testApp()
+                script {
+                    gv.testApp()
+                }
             }
         }
     }
