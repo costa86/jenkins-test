@@ -25,7 +25,8 @@ pipeline {
                 echo "Running on ${params.MODE}"
                 sh 'whoami'
                 sh 'ls'
-                sh('scp -o StrictHostKeyChecking=no -i $SSH test_app.py costa@164.90.185.208:')
+                sh 'touch cool.txt' 
+                sh('scp -i $SSH cool.txt costa@164.90.185.208:')
             }
         }
         stage('test') {
